@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vue Directives</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ title }}</h1>
+    <p v-if="count > 0">You've clicked the button {{ count }} times.</p>
+    <p v-else>Click the button to start counting.</p>
+    <button @click="count++">Count is: {{ count }}</button>
+  </div>
+
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    createApp({
+      setup() {
+        const title = ref("Vue 3 Directives Example")
+        const count = ref(0)
+        return { title, count }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>
