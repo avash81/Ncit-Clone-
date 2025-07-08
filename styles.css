@@ -101,9 +101,7 @@ body {
   right: 20px;
   z-index: 11;
 }
-.menu-icon {
-  display: none;
-}
+
 .hero {
   position: relative;
   height: 80vh;
