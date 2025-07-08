@@ -1,32 +1,35 @@
-// Select the nav-links element
-const navLinks = document.getElementById("navLinks");
-console.log("navLinks:", navLinks); // Debug: Verify element is found
-
-// Function to show the menu
+// Mobile menu toggle
 function showMenu() {
-  console.log("Showing menu");
-  if (navLinks) {
-    navLinks.style.right = "0";
-    document.body.style.overflow = "hidden"; // Prevent scrolling
-  } else {
-    console.error("navLinks element not found");
-  }
+  const nav = document.getElementById("navLinks");
+  const navBar = document.querySelector(".nav-bar");
+  nav.style.right = "0"; // Open menu
+  navBar.classList.add("hide-icons"); // Hide menu icon
+  nav.classList.add("hide-icons"); // Hide close icon
+  document.getElementById("closeMenu").style.display = "block"; // Show close icon
+  document.body.style.overflow = "hidden"; // Prevent scrolling
 }
 
-// Function to hide the menu
 function hideMenu() {
-  console.log("Hiding menu");
-  if (navLinks) {
-    navLinks.style.right = "-200px";
-    document.body.style.overflow = "auto"; // Restore scrolling
-  } else {
-    console.error("navLinks element not found");
-  }
+  const nav = document.getElementById("navLinks");
+  const navBar = document.querySelector(".nav-bar");
+  nav.style.right = "-200px"; // Close menu
+  navBar.classList.remove("hide-icons"); // Show menu icon
+  nav.classList.remove("hide-icons"); // Show close icon
+  document.getElementById("openMenu").style.display = "block"; // Show menu icon
+  document.getElementById("closeMenu").style.display = "none"; // Hide close icon
+  document.body.style.overflow = "auto"; // Allow scrolling
 }
 
-// Close menu when a link is clicked
-const navLinksItems = document.querySelectorAll(".nav-links ul li a");
-console, log("navLinksItems:", navLinksItems); // Debug: Verify links are found
-navLinksItems.forEach((item) => {
-  item.addEventListener("click", hideMenu);
+// Modal trigger
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("inquiryModal");
+  const openBtn = document.querySelector(".Message");
+  const closeBtn = document.getElementById("closeModal");
+
+  openBtn.addEventListener("click", () => (modal.style.display = "flex")); // Open modal
+  closeBtn.addEventListener("click", () => (modal.style.display = "none")); // Close modal
+  window.addEventListener(
+    "click",
+    (e) => e.target === modal && (modal.style.display = "none")
+  ); // Close modal on outside click
 });
