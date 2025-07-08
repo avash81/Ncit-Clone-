@@ -6,17 +6,20 @@
     <title>NCIT College</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Roboto&display=swap"
       rel="stylesheet"
     />
-
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
   </head>
   <body>
@@ -42,7 +45,10 @@
             <p>Affiliated to Pokhara University</p>
           </div>
         </div>
-        <nav class="nav-links">
+
+        <i class="fa-solid fa-bars menu-icon" onclick="showMenu()"></i>
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
           <ul>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Courses</a></li>
@@ -67,31 +73,43 @@
         <button>Apply Now</button>
       </div>
       <div class="photo">
-        <li class="one">
-          <img
-            src="images/0-02-03-6effeaf96c963b631168970724d6563977a15920688ff65154aaf227af06a196_23045e2faf4ecd64.jpg"
-          />
-          <img
-            src="images/0-02-03-a91c5d762b23c4ae2ea0506287a4116d38ee6177df73451ca03cc9f04ad4c9d1_75544b05d87cb1d9.png"
-            alt=""
-          />
-        </li>
-        <li class="two">
-          <img
-            src="images/0-02-03-a91c5d762b23c4ae2ea0506287a4116d38ee6177df73451ca03cc9f04ad4c9d1_75544b05d87cb1d9.png"
-            alt=""
-          />
-          <img
-            src="images/0-02-03-5b37cba7c5d1ff04c19db5a8e483db271927ec356bfd6bead573f57ca7fb19c2_bfb4b4ed4bbda011.jpg"
-            alt=""
-          />
-        </li>
+        <ul class="one">
+          <li>
+            <img
+              src="images/0-02-03-6effeaf96c963b631168970724d6563977a15920688ff65154aaf227af06a196_23045e2faf4ecd64.jpg"
+              alt="Campus image"
+            />
+          </li>
+          <li>
+            <img
+              src="images/0-02-03-a91c5d762b23c4ae2ea0506287a4116d38ee6177df73451ca03cc9f04ad4c9d1_75544b05d87cb1d9.png"
+              alt="Campus image"
+            />
+          </li>
+        </ul>
+        <ul class="two">
+          <li>
+            <img
+              src="images/0-02-03-a91c5d762b23c4ae2ea0506287a4116d38ee6177df73451ca03cc9f04ad4c9d1_75544b05d87cb1d9.png"
+              alt="Campus image"
+            />
+          </li>
+          <li>
+            <img
+              src="images/0-02-03-5b37cba7c5d1ff04c19db5a8e483db271927ec356bfd6bead573f57ca7fb19c2_bfb4b4ed4bbda011.jpg"
+              alt="Campus image"
+            />
+          </li>
+        </ul>
       </div>
     </section>
-    <p class="Message"><i class="fa fa-comment-dots"></i> Message Us</p>
+    <p class="Message-but">
+      <button class="Message">
+        <i class="fa fa-comment-dots"></i>
+      </button>
+    </p>
     <section class="low">
-      <p>Years of Experiance</p>
+      <p>Years of Experience</p>
     </section>
-    <script src="script.js"></script>
   </body>
 </html>
